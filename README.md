@@ -99,3 +99,28 @@ Una aplicación web desarrollada con **React** y **Firebase**, que simula las pr
 ```bash
 git clone https://github.com/Jesusmgn/mini-red-social.git
 cd mini-red-social
+### 2️⃣ Instalar dependencias
+npm install
+### 3️⃣ Configurar Firebase
+Crea un archivo .env.local o edita firebase.js con tu configuración:
+// src/firebase.js
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_AUTH_DOMAIN",
+  projectId: "TU_PROJECT_ID",
+  storageBucket: "TU_STORAGE_BUCKET",
+  messagingSenderId: "TU_SENDER_ID",
+  appId: "TU_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+export const storage = getStorage(app);
+### 4️⃣ Ejecutar el servidor de desarrollo
+npm run dev
